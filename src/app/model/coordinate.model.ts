@@ -6,5 +6,13 @@ export class Coordinate {
 	public originalColor!: string;
 	public updatedColor!: string;
 	public isOccupied!: boolean;
-	public piece!: Piece;
+	public piece: Piece = {
+		x: 0,
+		y: 0,
+		id: "",
+		name: "",
+		color: "",
+		possibleMoves: [],
+		history: []
+	}
 }
