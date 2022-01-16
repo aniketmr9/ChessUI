@@ -1,11 +1,11 @@
 <div class="container">
-  <table *ngIf = "chessBoard != undefined">
+  <table class="center" *ngIf = "chessBoard != undefined">
     <tr *ngFor="let coordinate of chessBoard.coordinates">
       <td *ngFor="let cell of coordinate"
         [ngClass]="{'black' : cell.updatedColor == 'Black', 'white' : cell.updatedColor == 'White', 'green' : cell.updatedColor == 'Green', 'red' : cell.updatedColor == 'Red'}"
         id="{{cell.x}},{{cell.y}}">
         <!-- <div>{{cell.x}}{{cell.y}}</div> -->
-        <div *ngIf="cell.piece.id == '0'" (click)="validateMove(cell)"></div>
+        <div class="pieceImg" *ngIf="cell.piece.id == '0'" (click)="validateMove(cell)"></div>
         <div class = "pieceImg" *ngIf="cell.piece.id != '0'" (click)="getPossibleMoves(cell)">
           <img src="{{asset}}{{cell.piece.name}}_{{cell.piece.color}}.png" />
         </div>

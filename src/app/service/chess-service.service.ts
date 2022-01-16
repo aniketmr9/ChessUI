@@ -12,14 +12,14 @@ export class ChessServiceService {
   constructor(private httpService: HttpClientService) { }
 
   getChessBoard() : Observable<Board>{
-    return this.httpService.getData("http://localhost:8080/chess/board/populate");
+    return this.httpService.getData("http://192.168.1.4:8080/chess/board/populate");
   }
 
   getPossibleMove(request: any) : Observable<any>{
-    return this.httpService.postData("http://localhost:8080/chess/board/getPossibleMove", request)
+    return this.httpService.postData("http://192.168.1.4:8080/chess/board/getPossibleMove", request)
   }
 
   updateMove(board: any) : Observable<any>{
-    return this.httpService.postData("http://localhost:8080/chess/board/updateBoard", board)
+    return this.httpService.postData("http://192.168.1.4:8080/chess/board/updateBoard", board)
   }
 }
